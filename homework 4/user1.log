@@ -1,0 +1,65 @@
+SQL> DELETE FROM table1;
+
+0 rows deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> INSERT INTO table1 (a,b) VALUES (1,1);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> DELETE FROM table2;
+
+0 rows deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT COUNT(*) from table2;
+
+  COUNT(*)                                                                      
+----------                                                                      
+         0                                                                      
+
+SQL> SELECT COUNT (*) from table2;
+
+  COUNT(*)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> DELETE FROM table1;
+
+1 row deleted.
+
+SQL> DELETE FROM table2;
+
+1 row deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> INSERT INTO table1 (a,b) values (1,1);
+
+1 row created.
+
+SQL> INSERT INTO table2 (a,b) values (1,1);
+
+1 row created.
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SPOOL OFF

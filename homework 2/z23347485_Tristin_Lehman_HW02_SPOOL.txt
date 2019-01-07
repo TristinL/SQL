@@ -1,0 +1,295 @@
+SQL> ALTER SESSION SET CURRENT_SCHEMA = yangk;
+
+Session altered.
+
+SQL> SET LINESIZE 400
+SQL> select * from tab;
+
+no rows selected
+
+SQL> SELECT E.first_name, E.last_name
+  2  FROM titles T, employees E
+  3  WHERE T.emp_no = E.emp_no AND T.title = 'Manager';
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Margareta      Markovitch                                                                                                                                                                                                                                                                                                                                                                                       
+Vishwani       Minakawa                                                                                                                                                                                                                                                                                                                                                                                         
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Shirish        Ossenbruggen                                                                                                                                                                                                                                                                                                                                                                                     
+Karsten        Sigstam                                                                                                                                                                                                                                                                                                                                                                                          
+Krassimir      Wegerle                                                                                                                                                                                                                                                                                                                                                                                          
+Rosine         Cools                                                                                                                                                                                                                                                                                                                                                                                            
+Shem           Kieras                                                                                                                                                                                                                                                                                                                                                                                           
+Oscar          Ghazalie                                                                                                                                                                                                                                                                                                                                                                                         
+DeForest       Hagimont                                                                                                                                                                                                                                                                                                                                                                                         
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Leon           DasSarma                                                                                                                                                                                                                                                                                                                                                                                         
+Peternela      Onuegbe                                                                                                                                                                                                                                                                                                                                                                                          
+Rutger         Hofmeyr                                                                                                                                                                                                                                                                                                                                                                                          
+Sanjoy         Quadeer                                                                                                                                                                                                                                                                                                                                                                                          
+Dung           Pesch                                                                                                                                                                                                                                                                                                                                                                                            
+Przemyslawa    Kaelbling                                                                                                                                                                                                                                                                                                                                                                                        
+Hauke          Zhang                                                                                                                                                                                                                                                                                                                                                                                            
+Arie           Staelin                                                                                                                                                                                                                                                                                                                                                                                          
+Hilary         Kambil                                                                                                                                                                                                                                                                                                                                                                                           
+Tonny          Butterworth                                                                                                                                                                                                                                                                                                                                                                                      
+Marjo          Giarratana                                                                                                                                                                                                                                                                                                                                                                                       
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Xiaobin        Spinelli                                                                                                                                                                                                                                                                                                                                                                                         
+Yuchang        Weedman                                                                                                                                                                                                                                                                                                                                                                                          
+
+24 rows selected.
+
+SQL> SELECT E.first_name, E.last_name
+  2  FROM salaries S, employees E
+  3  WHERE S.emp_no = E.emp_no AND S.salary < 39000;
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Monique        Reinhard                                                                                                                                                                                                                                                                                                                                                                                         
+Yurij          Narwekar                                                                                                                                                                                                                                                                                                                                                                                         
+Jacqueline     Syang                                                                                                                                                                                                                                                                                                                                                                                            
+Vishu          Biran                                                                                                                                                                                                                                                                                                                                                                                            
+Fumiya         Unno                                                                                                                                                                                                                                                                                                                                                                                             
+Fumiya         Unno                                                                                                                                                                                                                                                                                                                                                                                             
+Bernd          Copas                                                                                                                                                                                                                                                                                                                                                                                            
+Mechthild      Langford                                                                                                                                                                                                                                                                                                                                                                                         
+Yagil          Perri                                                                                                                                                                                                                                                                                                                                                                                            
+Shahaf         England                                                                                                                                                                                                                                                                                                                                                                                          
+Pascal         Lueh                                                                                                                                                                                                                                                                                                                                                                                             
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Denny          Assaf                                                                                                                                                                                                                                                                                                                                                                                            
+Olivera        Baek                                                                                                                                                                                                                                                                                                                                                                                             
+Gill           Rohrbach                                                                                                                                                                                                                                                                                                                                                                                         
+Matt           Munch                                                                                                                                                                                                                                                                                                                                                                                            
+Chuanyi        Kuhnemann                                                                                                                                                                                                                                                                                                                                                                                        
+Younwoo        Champarnaud                                                                                                                                                                                                                                                                                                                                                                                      
+Christfried    Werthner                                                                                                                                                                                                                                                                                                                                                                                         
+Sachar         Nicolson                                                                                                                                                                                                                                                                                                                                                                                         
+Nahum          Nitsche                                                                                                                                                                                                                                                                                                                                                                                          
+Zhiguo         Kobuchi                                                                                                                                                                                                                                                                                                                                                                                          
+Toshimitsu     Yavatkar                                                                                                                                                                                                                                                                                                                                                                                         
+
+22 rows selected.
+
+SQL> SELECT E.first_name, E.last_name
+  2  FROM	employees E, departments D, dept_manager DM
+  3  WHERE	D.dept_no = DM.dept_no AND DM.emp_no = E.emp_no
+  4  AND (D.dept_name = 'Research' OR D.dept_name = 'Finance');
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Arie           Staelin                                                                                                                                                                                                                                                                                                                                                                                          
+Hilary         Kambil                                                                                                                                                                                                                                                                                                                                                                                           
+
+SQL> SELECT	E.first_name, E.last_name
+  2  FROM	employees E, salaries S, dept_manager DM, departments D
+  3  WHERE	D.dept_no = DM.dept_no AND DM.emp_no = E.emp_no
+  4  AND S.emp_no = E.emp_no AND S.salary < 65000
+  5  AND D.dept_name = 'Finance';
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+
+11 rows selected.
+
+SQL> SELECT DISTINCT E.first_name, E.last_name
+  2  FROM	employees E, salaries S, dept_manager DM, departments D
+  3  WHERE	D.dept_no = DM.dept_no AND DM.emp_no = E.emp_no
+  4  AND S.emp_no = E.emp_no AND S.salary < 65000
+  5  AND D.dept_name = 'Finance';
+
+FIRST_NAME     LAST_NAME                                                                                                                                                                                                                                                                                                                                                                                        
+-------------- ----------------                                                                                                                                                                                                                                                                                                                                                                                 
+Isamu          Legleitner                                                                                                                                                                                                                                                                                                                                                                                       
+Ebru           Alpin                                                                                                                                                                                                                                                                                                                                                                                            
+
+SQL> SELECT	DE.emp_no
+  2  FROM departments D, dept_emp DE
+  3  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Research'
+  4  INTERSCT
+  5  SELECT DE.emp_no
+  6  FROM	departments D, dept_emp DE
+  7  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Finance';
+INTERSCT
+*
+ERROR at line 4:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN (
+  4  SELECT	DE.emp_no
+  5  FROM departments D, dept_emp DE
+  6  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Research'
+  7  INTERSCT
+  8  SELECT DE.emp_no
+  9  FROM	departments D, dept_emp DE
+ 10  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Finance');
+INTERSCT
+*
+ERROR at line 7:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN ( SELECT	DE.emp_no
+  4  FROM departments D, dept_emp DE
+  5  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Research'
+  6  INTERSCT
+  7  SELECT DE.emp_no
+  8  FROM	departments D, dept_emp DE
+  9  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Finance');
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN ( SELECT	DE.emp_no
+  4  FROM departments D, dept_emp DE
+  5  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Research'
+  6  INTERSCT
+  7  SELECT DE.emp_no
+  8  FROM	departments D, dept_emp DE
+  9  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Finance'));
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN ( SELECT	DE.emp_no
+  4  FROM departments D, dept_emp DE
+  5  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Research'
+  6  INTERSCT
+  7  SELECT DE.emp_no
+  8  FROM	departments D, dept_emp DE
+  9  WHERE	D.dept_no = DE.dept_no AND D.dept_name = 'Finance'));
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN ( SELECT	DE2.emp_no
+  4  FROM departments D1, dept_emp DE2
+  5  WHERE	D1.dept_no = DE2.dept_no AND D1.dept_name = 'Research'
+  6  INTERSCT
+  7  SELECT DE3.emp_no
+  8  FROM	departments D2, dept_emp DE3
+  9  WHERE	D2.dept_no = DE3.dept_no AND D2.dept_name = 'Finance');
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no = ( SELECT	DE2.emp_no
+  4  FROM departments D1, dept_emp DE2
+  5  WHERE	D1.dept_no = DE2.dept_no AND D1.dept_name = 'Research'
+  6  INTERSCT
+  7  SELECT DE3.emp_no
+  8  FROM	departments D2, dept_emp DE3
+  9  WHERE	D2.dept_no = DE3.dept_no AND D2.dept_name = 'Finance');
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no = (( SELECT	DE2.emp_no
+  4  FROM departments D1, dept_emp DE2
+  5  WHERE	D1.dept_no = DE2.dept_no AND D1.dept_name = 'Research')
+  6  INTERSCT
+  7  (SELECT DE3.emp_no
+  8  FROM	departments D2, dept_emp DE3
+  9  WHERE	D2.dept_no = DE3.dept_no AND D2.dept_name = 'Finance'));
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN (( SELECT DE2.emp_no
+  4  FROM departments D1, dept_emp DE2
+  5  WHERE	D1.dept_no = DE2.dept_no AND D1.dept_name = 'Research')
+  6  INTERSCT
+  7  (SELECT DE3.emp_no
+  8  FROM	departments D2, dept_emp DE3
+  9  WHERE	D2.dept_no = DE3.dept_no AND D2.dept_name = 'Finance'));
+INTERSCT
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> 
+SQL> 
+SQL> 
+SQL> SELECT DE.emp_no
+  2  FROM dept_emp DE
+  3  WHERE DE.emp_no IN (( SELECT DE2.emp_no
+  4  FROM departments D1, dept_emp DE2
+  5  WHERE	D1.dept_no = DE2.dept_no AND D1.dept_name = 'Research')
+  6  INTERSECT
+  7  (SELECT DE3.emp_no
+  8  FROM	departments D2, dept_emp DE3
+  9  WHERE	D2.dept_no = DE3.dept_no AND D2.dept_name = 'Finance'));
+
+no rows selected
+
+SQL> SPOOL OFF

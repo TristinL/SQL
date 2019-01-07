@@ -1,0 +1,66 @@
+SQL> SET LINESIZE 400;
+SQL> create table employees( id char(11), name varchar2(100), age integer, salary number, Constraint employees_child primary key(id));
+
+Table created.
+
+SQL> CREATE TABLE D_POLICY(
+  2  ID char(11),
+  3  NAME varchar2(100),
+  4  AGE integer,
+  5  PRIMARY KEY(NAME),
+  6  CONSTRAINT fk_d_policy FOREIGN KEY(ID) REFERENCES EMPLOYEES(ID)
+  7  ON DELETE CASCADE);
+
+Table created.
+
+SQL> create table works_in( id char(11), D_ID char(11), work_time integer, FOREIGN KEY(id) REFERENCES EMPLOYEES(id) ON DELETE CASCADE, FOREIGN KEY(D_ID) REFERENCES DEPARTMENTS(D_ID) ON DELETE CASCADE);
+create table works_in( id char(11), D_ID char(11), work_time integer, FOREIGN KEY(id) REFERENCES EMPLOYEES(id) ON DELETE CASCADE, FOREIGN KEY(D_ID) REFERENCES DEPARTMENTS(D_ID) ON DELETE CASCADE)
+                                                                                                                                                               *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> create table departments( D_ID char(11), d_name varchar2(100), budget number, PRIMARY KEY(D_ID));
+
+Table created.
+
+SQL> create table works_in( id char(11), D_ID char(11), work_time integer, FOREIGN KEY(id) REFERENCES EMPLOYEES(id) ON DELETE CASCADE, FOREIGN KEY(D_ID) REFERENCES DEPARTMENTS(D_ID) ON DELETE CASCADE);
+
+Table created.
+
+SQL> insert all
+  2    into departments (d_id, d_name, budget) values ('1', 'Marketing', 10000000)
+  3    into departments (d_id, d_name, budget) values ('2', 'Sales', 20000000)
+  4    select * from dual;
+
+2 rows created.
+
+SQL> insert all
+  2    into employees (id, name, age, salary) values ('1', 'James', 32, 100000)
+  3  into employees (id, name, age, salary) values ('2', 'John', 33, 200000)
+  4  into employees (id, name, age, salary) values ('3', 'Patricia', 35, 300000)
+  5    select * from dual;
+
+3 rows created.
+
+SQL> insert all
+  2    into works_in (id, d_id, work_time) values ('1', '1', 30)
+  3    into works_in (id, d_id, work_time) values ('2', '2', 40)
+  4    into works_in (id, d_id, work_time) values ('3', '1', 50)
+  5    select * from dual;
+
+3 rows created.
+
+SQL> insert all
+  2    into d_policy (id, name, age) values ('1', 'Mary', 7)
+  3    into d_policy (id, name, age) values ('1', 'Daniel', 5)
+  4    select * from dual;
+
+2 rows created.
+
+SQL> Delete from employees E
+  2  WHERE E.name = 'James';
+
+1 row deleted.
+
+SQL> SPOOL off

@@ -1,0 +1,44 @@
+1)
+
+Select E.emp_no
+from employees E, titles T, dept_emp DE, departments D
+where E.emp_no = T.emp_no AND E.emp_no = DE.emp_no
+AND DE.dept_no = D.dept_no AND D.dept_name = 'Research'
+AND T.title = 'Manager';
+
+2)
+
+Select DISTINCT E.emp_no
+from employees E, dept_emp DE, departments D
+where E.emp_no = DE.emp_no AND DE.dept_no = D.dept_no
+AND E.first_name = 'Laurentiu' AND D.dept_name <> 'Development'
+UNION
+Select E.emp_no
+from employees E, dept_emp DE, departments D
+where E.emp_no = DE.emp_no AND DE.dept_no = D.dept_no
+AND E.last_name = 'Cesareni' AND D.dept_name <> 'Research';
+
+3)
+
+Select DISTINCT E.first_name
+From employees E, dept_manager DM, departments D
+where E.emp_no = DM.emp_no AND DM.dept_no = D.dept_no
+AND D.dept_name = 'Sales';
+
+4)
+
+Select D.dept_no, count (*)
+from employees E, dept_emp DE, departments D
+where E.emp_no = DE.emp_no AND DE.dept_no = D.dept_no
+group by D.dept_no
+having count(*) > 1;
+
+5)
+
+Select E.first_name
+from employees E, salaries S
+where E.emp_no = S.emp_no AND S.salary IN
+					(Select max (S2.salary)
+					from employees E2, dept_emp DE, departments D, salaries S2
+					where E2.emp_no = DE.emp_no AND DE.dept_no = D.dept_no
+					AND S2.emp_no = E2.emp_no AND D.dept_name = 'Sales');

@@ -1,0 +1,32 @@
+SQL> INSERT INTO table1 (a,b) VALUES (1,1);
+INSERT INTO table1 (a,b) VALUES (1,1)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (TLEHMAN2015.SYS_C0096109) violated 
+
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> INSERT INTO table2 (a,b) values (1,2);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> INSERT INTO table2 (a,b) values (1,1);
+
+1 row created.
+
+SQL> INSERT INTO table1 (a,b) values (1, 1);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SPOOL OFF
